@@ -38,8 +38,8 @@ const Applications = () => {
 
   return (
     <>
+      {modalShowing && <ApplicationModal id={id} setModal={setModalShowing}/>}
       <div className={styles.Applications}>
-        {modalShowing && <ApplicationModal id={id} setModal={setModalShowing}/>}
         {applications.length && applications.map(application => <SingleApplication setId={setId} setModal={setModalShowing} key={application.email} application={application} />)}
       </div>
       <div className={styles.buttonContainer}>
