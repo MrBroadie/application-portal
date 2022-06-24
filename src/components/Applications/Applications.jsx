@@ -35,7 +35,7 @@ const Applications = () => {
   return (
     <div className={styles.Applications}>
       {applications.length && applications.map(application => <SingleApplication key={application.email} application={application} />)}
-      {applications.length && <Button onClick={handleClick} />}
+      {applications.length && <Button onClick={handleClick} title={'Load More'}/>}
     </div>
   );
 };

@@ -6,6 +6,7 @@
   color: var(--color-white-100);
   font-weight: bold;
   padding: 8px 24px;
+  margin: 24px;
   text-align: center;
   white-space: nowrap;
   transition: background-color 0.3s;
