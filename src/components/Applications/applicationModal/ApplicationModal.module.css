@@ -14,6 +14,7 @@
   display: grid;
   grid-template-rows: 1fr 3fr;
   width: 60%;
+  min-width: 500px;
   height: 75%;
   background-color: white;
   color: hsl(202, 35%, 10%);;

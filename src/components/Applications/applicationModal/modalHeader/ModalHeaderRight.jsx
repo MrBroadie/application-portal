@@ -9,11 +9,11 @@ const ModalHeaderRight = ({user}) => {
         <li className={styles.listLoan}>{'£' + new Intl.NumberFormat().format(user.loan_amount)}</li>
       </li>
       <div className={styles.listContainer}>
-        <li> 
+        <li className={styles.listHide}> 
         Product 
           <li className={styles.listElement}>{user.loan_type}</li>
         </li>
-        <li> 
+        <li className={styles.listHide}> 
         Application date 
           <li className={styles.listElement}>{moment(user.date_created).format('DD-MM-YYYY')}</li>
         </li>
