@@ -1,0 +1,12 @@
+.ApplicationModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  width: 50vw;
+  height: 50vh;
+  color: white;
+  background-color: red;
+  position: fixed;
+}

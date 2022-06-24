@@ -2,12 +2,16 @@ import React from "react";
 import styles from "./SingleApplication.module.css";
 import moment from "moment";
 
-const SingleApplication = ({ application }) => {
-
-
+const SingleApplication = ({ application, setModal, setId }) => {
+  
+  //show the modal
+  const toggleModal = () => {
+    setModal(modalShowing => !modalShowing);
+    setId(application.id)
+  }
 
   return (
-    <div className={styles.SingleApplication}>
+    <button className={styles.SingleApplication} onClick={toggleModal}>
       <div className={styles.cell}>
         <sub>Company</sub>
         {application.company}
@@ -32,7 +36,7 @@ const SingleApplication = ({ application }) => {
         <sub>Expiry date</sub>
         {moment(application.expiry_date).format('Do MMMM YYYY')}
       </div>
-    </div>
+    </button>
   );
 };
 

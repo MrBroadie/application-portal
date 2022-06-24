@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import SingleApplication from "./SingleApplication/SingleApplication";
-import { getApplications } from "./ApplicationServices";
+import SingleApplication from "./singleApplication/SingleApplication";
+import { getApplications } from "./ApplicationService";
+import ApplicationModal from "./applicationModal/ApplicationModal";
 import { Button } from "../../ui/Button/Button";
 import styles from "./Applications.module.css";
 
 const Applications = () => {
 
   const count = 5;
-  const [applications, setApplications] = useState([])
-  const [applicationNumber, setApplicationNumber] = useState(1) 
+  const [applications, setApplications] = useState([]);
+  const [applicationNumber, setApplicationNumber] = useState(1);
+  const [modalShowing, setModalShowing] = useState(false);
+  const [id, setId] = useState('');
 
   //helper function to handle errors in getting applications
   const checkApplication = (applicationNumber, count) => {
@@ -36,7 +39,8 @@ const Applications = () => {
   return (
     <>
       <div className={styles.Applications}>
-        {applications.length && applications.map(application => <SingleApplication key={application.email} application={application} />)}
+        {modalShowing && <ApplicationModal id={id} setModal={setModalShowing}/>}
+        {applications.length && applications.map(application => <SingleApplication setId={setId} setModal={setModalShowing} key={application.email} application={application} />)}
       </div>
       <div className={styles.buttonContainer}>
         {applications.length && <Button onClick={handleClick} title={'Load More'}/>}
