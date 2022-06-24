@@ -40,7 +40,9 @@ const Applications = () => {
     <>
       {modalShowing && <ApplicationModal id={id} setModal={setModalShowing}/>}
       <div className={styles.Applications}>
-        {applications.length && applications.map(application => <SingleApplication setId={setId} setModal={setModalShowing} key={application.email} application={application} />)}
+        {applications.length && applications.map(application => 
+          <SingleApplication setId={setId} setModal={setModalShowing} key={application.email} application={application} />)
+        }
       </div>
       <div className={styles.buttonContainer}>
         {applications.length && <Button onClick={handleClick} title={'Load More'}/>}
