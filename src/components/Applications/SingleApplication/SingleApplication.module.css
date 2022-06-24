@@ -9,6 +9,11 @@
   margin-bottom: 1rem;
 }
 
+.SingleApplication:hover {
+  background-color: rgba(173, 200, 215, 0.25);
+  cursor: pointer;
+}
+
 .SingleApplication :last-child{
   text-align: left;
   border-right:none;
@@ -76,6 +81,11 @@
     border-radius: 10px;
     margin-bottom: 1rem;
     font-size: small;
+  }
+  
+  .SingleApplication:hover {
+    background-color: rgba(173, 200, 215, 0.25);
+    cursor: pointer;
   }
 
   .SingleApplication :nth-child(4){

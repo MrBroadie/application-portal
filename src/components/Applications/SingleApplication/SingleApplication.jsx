@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./SingleApplication.module.css";
+import moment from "moment";
 
 const SingleApplication = ({ application }) => {
+
+
+
   return (
     <div className={styles.SingleApplication}>
       <div className={styles.cell}>
@@ -18,15 +22,15 @@ const SingleApplication = ({ application }) => {
       </div>
       <div className={styles.cell}>
         <sub>Loan Amount</sub>
-        {application.loan_amount}
+        {'£' + new Intl.NumberFormat().format(application.loan_amount)}
       </div>
       <div className={styles.cellHide}>
         <sub>Application Date</sub>
-        {application.date_created}
+        {moment(application.date_created).format('Do MMMM YYYY')}
       </div>
       <div className={styles.cellHide}>
         <sub>Expiry date</sub>
-        {application.expiry_date}
+        {moment(application.expiry_date).format('Do MMMM YYYY')}
       </div>
     </div>
   );

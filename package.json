@@ -26,7 +26,8 @@
     "devDependencies": {
         "concurrently": "7.0.0",
         "eslint": "^8.18.0",
-        "eslint-plugin-react": "^7.30.1"
+        "eslint-plugin-react": "^7.30.1",
+        "moment": "^2.29.3"
     },
     "eslintConfig": {
         "extends": [
