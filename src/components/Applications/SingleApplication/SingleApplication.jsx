@@ -8,7 +8,7 @@ const SingleApplication = ({ application }) => {
         <sub>Company</sub>
         {application.company}
       </div>
-      <div className={styles.cell}>
+      <div className={styles.cellHide}>
         <sub>Name</sub>
         {application.first_name} {application.last_name}
       </div>
@@ -20,11 +20,11 @@ const SingleApplication = ({ application }) => {
         <sub>Loan Amount</sub>
         {application.loan_amount}
       </div>
-      <div className={styles.cell}>
+      <div className={styles.cellHide}>
         <sub>Application Date</sub>
         {application.date_created}
       </div>
-      <div className={styles.cell}>
+      <div className={styles.cellHide}>
         <sub>Expiry date</sub>
         {application.expiry_date}
       </div>

@@ -8,7 +8,7 @@ const Applications = () => {
 
   const count = 5;
   const [applications, setApplications] = useState([])
-  let applicationNumber = 1;
+  const [applicationNumber, setApplicationNumber] = useState(1) 
 
   //helper function to handle errors in getting applications
   const checkApplication = (applicationNumber, count) => {
@@ -24,19 +24,24 @@ const Applications = () => {
   //on inital page load make a call to the api to return first 5 applications
   useEffect(() => {
     checkApplication(applicationNumber, count)
+    setApplicationNumber(applicationNumber + 1)
   }, [])
 
   //onClick return the next page number by increasing the counter by one
   const handleClick = () => {
-    applicationNumber++
     checkApplication(applicationNumber, count)
+    setApplicationNumber(applicationNumber + 1)
   }
 
   return (
-    <div className={styles.Applications}>
-      {applications.length && applications.map(application => <SingleApplication key={application.email} application={application} />)}
-      {applications.length && <Button onClick={handleClick} title={'Load More'}/>}
-    </div>
+    <>
+      <div className={styles.Applications}>
+        {applications.length && applications.map(application => <SingleApplication key={application.email} application={application} />)}
+      </div>
+      <div className={styles.buttonContainer}>
+        {applications.length && <Button onClick={handleClick} title={'Load More'}/>}
+      </div>
+    </>
   );
 };
 
