@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./SingleApplication.module.css";
 import moment from "moment";
 
-const SingleApplication = ({ application, setModal, setId }) => {
+const SingleApplication = ({index, application, setModal, setId }) => {
   
   //show the modal
   const toggleModal = () => {
@@ -12,7 +12,7 @@ const SingleApplication = ({ application, setModal, setId }) => {
 
   return (
     <button className={styles.SingleApplication} onClick={toggleModal}>
-      <div className={styles.cell}>
+      <div className={styles.cell} data-testid={`application${index}`}>
         <sub>Company</sub>
         {application.company}
       </div>

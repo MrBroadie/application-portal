@@ -26,8 +26,10 @@ const Applications = () => {
 
   //on inital page load make a call to the api to return first 5 applications
   useEffect(() => {
+    let isSubscribed = true;
     checkApplication(applicationNumber, count)
     setApplicationNumber(applicationNumber + 1)
+    return () => (isSubscribed = false)
   }, [])
 
   //onClick return the next page number by increasing the counter by one
@@ -40,12 +42,12 @@ const Applications = () => {
     <>
       {modalShowing && <ApplicationModal id={id} setModal={setModalShowing}/>}
       <div className={styles.Applications}>
-        {applications.length && applications.map(application => 
-          <SingleApplication setId={setId} setModal={setModalShowing} key={application.email} application={application} />)
+        {applications.length && applications.map((application, index) => 
+          <SingleApplication index={index} setId={setId} setModal={setModalShowing} key={application.email} application={application} />)
         }
       </div>
       <div className={styles.buttonContainer}>
-        {applications.length && <Button onClick={handleClick} title={'Load More'}/>}
+        {applications.length && <Button data-testid={`loadMoreButton`} onClick={handleClick} title={'Load More'}/>}
       </div>
     </>
   );
