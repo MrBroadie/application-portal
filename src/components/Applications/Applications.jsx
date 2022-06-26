@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SingleApplication from "./singleApplication/SingleApplication";
+import SingleApplication from "./SingleApplication/SingleApplication";
 import { getApplications } from "./ApplicationService";
 import ApplicationModal from "./applicationModal/ApplicationModal";
 import { Button } from "../../ui/Button/Button";
