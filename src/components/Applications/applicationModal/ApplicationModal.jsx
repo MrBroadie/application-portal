@@ -5,13 +5,16 @@ import ModalHeader from './modalHeader/ModalHeader';
 import { getModalData } from './ModalService';
 import ModalTable from './modalTable/ModalTable';
 
+//When Single Application is clicked id is passed down 
 const ApplicationModal = ({setModal, id}) => {
   
+  //User to be passed down to the elements in the modal
   const [user, setUser] = useState({})
 
   useEffect(() => {
     getModalData(id)
       .then(res => setUser(res))
+  //new API call is made only if id has changed otherwise modal is just toggled
   }, [id])
 
   //show the modal

@@ -40,13 +40,16 @@ const Applications = () => {
 
   return (
     <>
+      {/* Only toggle modal if state is true */}
       {modalShowing && <ApplicationModal id={id} setModal={setModalShowing}/>}
       <div className={styles.Applications}>
+        {/* Only show applications if there has been a successful useEffect API call */}
         {applications.length && applications.map((application, index) => 
           <SingleApplication index={index} setId={setId} setModal={setModalShowing} key={application.email} application={application} />)
         }
       </div>
       <div className={styles.buttonContainer}>
+        {/* Only show button if there has been a successful useEffect API call to stop further unsuccessful API calls*/}
         {applications.length && <Button data-testid={`loadMoreButton`} onClick={handleClick} title={'Load More'}/>}
       </div>
     </>
